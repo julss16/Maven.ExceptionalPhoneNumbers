@@ -6,10 +6,12 @@ import com.zipcodewilmington.exceptions.InvalidPhoneNumberFormatException;
  * Created by leon on 5/10/17.
  */
 public final class PhoneNumber {
+
     private final String phoneNumberString;
 
     // default constructor is uncallable
     private PhoneNumber() throws InvalidPhoneNumberFormatException {
+
         this(null);
     }
 
@@ -23,19 +25,25 @@ public final class PhoneNumber {
     }
 
     public String getAreaCode() {
-        return toString().substring(1, 4);
+
+
+        return getAreaCode().substring(1, 4);
+
     }
 
     public String getCentralOfficeCode() {
-        return toString().substring(6, 9);
+
+        return getCentralOfficeCode().substring(6, 9);
     }
 
     public String getPhoneLineCode() {
-        return toString().substring(10, 14);
+
+        return phoneNumberString.substring(10, 14);
 }
 
     @Override
     public String toString() {
+
         return phoneNumberString;
     }
 }
